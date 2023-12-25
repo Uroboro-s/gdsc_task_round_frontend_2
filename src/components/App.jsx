@@ -5,6 +5,8 @@
 //import reactLogo from '../assets/react.svg'
 //import viteLogo from ''
 //import '../styles/App.css'
+import '../styles/mode1.css'
+
 import Page from './Page'
 
 function App() {

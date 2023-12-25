@@ -8,8 +8,11 @@ function Page() {
     
     return (
         <>
-            <ImageComponent/>
-            <RightComponent/>
+            <div className="content">
+                <ImageComponent/>
+                <RightComponent/>
+            </div>
+            
         </>
     )
 }

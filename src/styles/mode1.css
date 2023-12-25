@@ -1,0 +1,64 @@
+:root {
+    --color: #e6007e;
+    --txt: rgb(185, 185, 185)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--txt);
+
+
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+}
+
+.content, .logo{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* left side (picture) */
+.picture {
+    background-image: url(../assets/space-g1e38f8dc5_1920.jpg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 40vw;
+}
+
+.logo {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    top: 20vh;
+    gap: 1vw;
+    padding: 15px 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* h1{
+    color: white;
+} */
+
+.whale {
+    height: 10vh;
+    
+}
+
+/*right side (form and content)*/
+
+.right {
+    width: 60vw;
+    background-color: #000000;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
