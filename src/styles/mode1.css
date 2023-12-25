@@ -71,10 +71,11 @@ h1{
     font-weight: 500;
     width: 90%;
     font-size: 1.2rem;
+    padding-top: 10px;
 }
 
 .remote-text {
-    margin: 40px 0 80px;
+    margin: 40px 0 50px;
 }
 
 .form {
@@ -107,6 +108,7 @@ input {
     background-color: rgb(2, 2, 2);
     border: 1px solid rgb(77, 77, 77);
     border-radius: 3px;
+    height: 35px;
 }
 
 input:focus{
