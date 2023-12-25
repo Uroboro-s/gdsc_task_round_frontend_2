@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import FormComponent from "./FormComponent";
+import SocialComponent from "./SocialComponent";
 
 function RightComponent() {
     return (
@@ -12,6 +13,7 @@ function RightComponent() {
                     <p className="remote-text">You <em>know</em> you want to.</p>
                 </div>
                 <FormComponent/>
+                <SocialComponent/>
                 <div className="log-in left"><p>Already have an account?</p><a href="#">Log in</a></div>
             </div>
         </>

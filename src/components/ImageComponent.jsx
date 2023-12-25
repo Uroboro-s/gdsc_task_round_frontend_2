@@ -11,6 +11,7 @@ function ImageComponent() {
             <div className="picture">
                 <div className="logo">
                     <img src={logo} alt="logo" className="whale"/>
+                    <h1 className='GDSC'>GDSC</h1>
                 </div>
             </div>
         </>
