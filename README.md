@@ -16,7 +16,7 @@ At the moment there are two kinds of validation:-
 Both the errors appear upon typing in password field only.
 
 **Password Match**
-*If confirm password field is changed a password matcher function is run which checks whether password and confirm password fields have same value. If they do, confirm password becomes green. Else, it becomes red.
+- If confirm password field is changed a password matcher function is run which checks whether password and confirm password fields have same value. If they do, confirm password becomes green. Else, it becomes red.
 
 **Responsive Design**
 - The page has been made responsive to accomodate a variety of devices and settings.
