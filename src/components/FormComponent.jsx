@@ -1,14 +1,39 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable react/prop-types */
 
 import { useState } from "react";
+import {Checkmark} from 'react-checkmark';
 
 
+function CrossMark() {
+    return (
+        <>
+            <svg className="cross__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+  		        <circle className="cross__circle" cx="26" cy="26" r="25" fill="none"/>
+				<path className="cross__path cross__path--right" fill="none" d="M16,16 l20,20" />
+                <path className="cross__path cross__path--right" fill="none" d="M16,36 l20,-20" />
+		   
+		    </svg>
+        </>
+    )
+}
+
+function TickMark() {
+    return (
+        <>
+            <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" style={{marginLeft: "5px"}}>
+                <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"></circle>
+                <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+            </svg>
+        </>
+    )
+}
 
 
 function FormComponent() {
     const [auth, setAuth] = useState({password: '', confirm_password: ''});
     const [message, setMessage] = useState("");
-    
+    const [check, setCheck] = useState(false);
 
     const checkCount = () => {
         const password = document.getElementById('passwor');
@@ -68,10 +93,11 @@ function FormComponent() {
     const matchPassword = (value) => {
         const confirm_password = document.getElementById('confirm-password');
         if(auth.password == value) {
-            
+            setCheck(true);
             confirm_password.style.border = "1.5px solid green";
         }
         else {
+            setCheck(false)
             confirm_password.style.border = "1.5px solid red";
         }
     }
@@ -84,6 +110,20 @@ function FormComponent() {
             setAuth({...auth, confirm_password: value});
             
             matchPassword(value);
+        }
+    }
+
+    const checkMark = () => {
+
+        if(check){
+            return (
+                <TickMark/>
+            )
+        }
+        else if(!check && auth.password != "" && auth.confirm_password != "") {
+            return (
+                <CrossMark/>
+            )
         }
     }
 
@@ -110,7 +150,7 @@ function FormComponent() {
                     
                     <div className="input">
                         <label htmlFor="phone-number">Phone number</label>
-                        <input type="text" name="phone-number" id="phone-number" minLength="9" maxLength="9"></input>
+                        <input type="tel" name="phone-number" id="phone-number" minLength="9" maxLength="9"></input>
                     </div>
                     
                     <div className="input">
@@ -119,6 +159,7 @@ function FormComponent() {
                             type="password" 
                             name="passwor" 
                             id="passwor" 
+                            minLength={8}
                             value={auth.password} required
                             onChange={(event) => updatePassword(true, event.target.value)}
                         />
@@ -126,19 +167,16 @@ function FormComponent() {
                     </div>
                     
                     <div className="input">
-                        <label htmlFor="confirm-password">Confirm password</label>
+                        <div className="labelandcheck"><label htmlFor="confirm-password">Confirm password</label>{checkMark()}</div>
                         <input 
                             type="password" 
                             name="confirm-password" 
                             id="confirm-password" 
+                            minLength={8}
                             value={auth.confirm_password}required
                             onChange={(event) => {updatePassword(false, event.target.value); }}
                         />
-                        {/* green tick animation svg */}
-                        {/* <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-  <circle className="path circle" fill="none" stroke="#73AF55" strokeWidth="6" strokeMiterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
-  <polyline className="path check" fill="none" stroke="#73AF55" strokeWidth="6" strokeLinecap="round" strokeMiterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
-</svg> */}
+                        
                     </div>
                    
                 </div>

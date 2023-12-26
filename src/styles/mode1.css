@@ -1,6 +1,9 @@
 :root {
     --color: #e6007e;
-    --txt: rgb(185, 185, 185)
+    --txt: rgb(239, 239, 239);
+    --checkmark-fill-color: #7ac142;
+    --checkmark-arrow-color: #fff;
+    --checkmark-arrow-thickness: 5;
 }
 
 *{
@@ -115,6 +118,83 @@ input:focus{
     outline: none;
     border: 1px solid var(--color);
 }
+
+
+.checkmark {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--txt);
+    padding-left: 0;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 50%;
+    stroke: var(--checkmark-fill-color);
+    stroke-width: var(--checkmark-arrow-thickness);
+    stroke-miterlimit: 10;
+    animation: fill .4s ease-in-out .4s forwards,scale .3s ease-in-out .9s both;
+    width: 16px;
+    height: 16px;
+}
+
+.labelandcheck{
+    display: flex;
+}
+
+
+
+.cross__svg {
+    border-radius: 50%;
+    display: block;
+    height: 154px;
+    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    stroke-width: 3;
+    width: 16px;
+    height: 16px;
+}
+
+.cross__circle {
+    animation: 0.6s ease 0s normal forwards 1 running stroke;
+    fill: none;
+    margin: 0 auto;
+    stroke: #e55454;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+}
+
+.cross__path {
+    stroke: #e55454;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    transform-origin: 50% 50% 0;
+/*     &--right {
+      animation: 0.3s ease 0.8s normal forwards 1 running stroke;
+    }
+    &--left {
+      animation: 1s ease 0.8s normal forwards 1 running stroke;
+    } */
+}
+/* Wrote the below css as a conversion of above sass */
+.cross__path--right{
+    animation: 0.3s ease 0.8s normal forwards 1 running stroke;
+}
+.cross__path--left {
+    animation: 1s ease 0.8s normal forwards 1 running stroke;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 
 /*separator line*/
 .separator-line {
